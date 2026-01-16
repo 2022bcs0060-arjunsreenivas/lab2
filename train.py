@@ -12,7 +12,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 data = pd.read_csv("dataset/winequality-white.csv",sep=";")
 X = data.drop(['quality'],axis=1)
 y = data['quality']
-
+X = X.drop(["alcohol", "sulphates"], axis=1)
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2, random_state=1234)
 
 model = LinearRegression()
