@@ -17,7 +17,7 @@ scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 X_train,X_test,y_train,y_test = train_test_split(X_scaled,y,test_size=0.2, random_state=1234)
 
-model = LinearRegression()
+model = Ridge(alpha=1.0)
 model.fit(X_train,y_train)
 
 pred = model.predict(X_test)
